@@ -59,6 +59,7 @@ obj/
 *.iws
 /out/
 
+
 # User-specific configurations
 .idea/libraries/
 .idea/workspace.xml
