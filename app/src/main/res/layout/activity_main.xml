@@ -14,18 +14,6 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-2dp" />
 
-    <Button
-        android:id="@+id/RandomButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="@android:dimen/app_icon_size"
-        android:elevation="0dp"
-        android:text="Random"
-        android:visibility="visible"
-        app:constraintSet="?android:attr/textSelectHandle"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="231dp" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="154dp"
@@ -36,5 +24,22 @@
         android:textSize="36sp"
         tools:layout_editor_absoluteX="115dp"
         tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="217dp"
+        android:layout_height="213dp"
+        app:srcCompat="@drawable/round_button"
+        tools:layout_editor_absoluteX="447dp"
+        tools:layout_editor_absoluteY="410dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="208dp"
+        android:layout_height="193dp"
+        app:srcCompat="@drawable/round_button"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="159dp" />
+
 </android.support.constraint.ConstraintLayout>
 
