@@ -6,13 +6,35 @@
     android:layout_height="match_parent"
     tools:context="com.example.mholt2587.boredapp.MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="384dp"
+        android:layout_height="514dp"
+        app:srcCompat="@drawable/BoredWheel"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-2dp" />
+
+    <Button
+        android:id="@+id/RandomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello Macey"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:width="@android:dimen/app_icon_size"
+        android:elevation="0dp"
+        android:text="Random"
+        android:visibility="visible"
+        app:constraintSet="?android:attr/textSelectHandle"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="231dp" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="154dp"
+        android:layout_height="43dp"
+        android:text="BORED"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="16dp" />
 </android.support.constraint.ConstraintLayout>
+
