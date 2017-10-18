@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Bored</string>
-    <string name = "page0"></string>
-    <string name = "boredButton">Bored</string>
+    <string name="page0"></string>
+    <string name="boredButton">Bored</string>
+    <string name="buttonRandom">Send</string>
 
 </resources>
