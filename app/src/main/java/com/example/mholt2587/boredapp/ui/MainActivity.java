@@ -1,25 +1,24 @@
 package com.example.mholt2587.boredapp.ui;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.mholt2587.boredapp.R;
+import static android.R.id.message;
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+
     ConstraintLayout background;
     Button randomButton, buttonSports, buttonYelp, buttonFacebook, buttonOutdoors, buttonMarkets, buttonPPR, buttonFairs;
 
 
-    public void sendMessage(View view){
-        Intent startNewActivity = new Intent(this, StoryActivity.class);
-        startActivity(startNewActivity);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         buttonMarkets = (Button) findViewById(R.id.buttonMarkets);
         buttonPPR = (Button) findViewById(R.id.buttonPPR);
         buttonFairs = (Button) findViewById(R.id.buttonFairs);
+/*
 
         randomButton.setOnClickListener(new View.OnClickListener() {
 
@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //click button code here
                 //go to next page...
-               // sendMessage();
-                background.setBackgroundColor(Color.parseColor("#00ff00"));
+                //sendMessage();
+                //background.setBackgroundColor(Color.parseColor("#00ff00"));
 
                 }
 
@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+*/
 
 
 
@@ -137,6 +138,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void sendMessage(View view){
+        Intent startNewActivity = new Intent(this, StoryActivity.class);
+        startNewActivity.putExtra(EXTRA_MESSAGE, message);
+        startActivity(startNewActivity);
+    }
+
 
 
 }
