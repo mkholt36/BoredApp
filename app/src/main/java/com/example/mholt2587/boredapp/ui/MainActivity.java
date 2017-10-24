@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.mholt2587.boredapp.R;
 import static android.R.id.message;
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 import android.view.View;
 import android.widget.Button;
@@ -139,10 +138,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //when the random button is clicked, the user will be taken to a new screen specific to the random button
     public void sendMessage(View view){
         Intent startNewActivity = new Intent(this, StoryActivity.class);
         startNewActivity.putExtra(EXTRA_MESSAGE, message);
         startActivity(startNewActivity);
+    }
+
+    //when the sports button is clicked, the user will be taken to a new screen specific to the sports button
+    public void sportsMessage (View view) {
+        Intent sportsButton = new Intent(this, SportsButtonActivity.class);
+        sportsButton.putExtra(EXTRA_MESSAGE, message);
+        startActivity(sportsButton);
     }
 
 

@@ -61,11 +61,7 @@
         android:id="@+id/buttonSports"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-
-        android:onClick="sendMessage"
-
-
+        android:onClick="sportsMessage"
         android:text="Sports"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="0dp"
