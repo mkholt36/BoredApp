@@ -19,6 +19,13 @@
 
         <activity android:name=".ui.StoryActivity"></activity>
         <activity android:name=".ui.SportsButtonActivity"></activity>
+        <activity android:name=".ui.FairsButtonActivity"></activity>
+        <activity android:name=".ui.YelpButtonActivity"></activity>
+        <activity android:name=".ui.OutdoorsButtonActivity"></activity>
+        <activity android:name=".ui.FacebookButtonActivity"></activity>
+        <activity android:name=".ui.MarketsButtonActivity"></activity>
+        <activity android:name=".ui.PPRButtonActivity"></activity>
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

@@ -1,12 +1,10 @@
 package com.example.mholt2587.boredapp.ui;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.mholt2587.boredapp.R;
 import static android.R.id.message;
-
 import android.view.View;
 import android.widget.Button;
 
@@ -33,87 +31,7 @@ public class MainActivity extends AppCompatActivity {
         buttonMarkets = (Button) findViewById(R.id.buttonMarkets);
         buttonPPR = (Button) findViewById(R.id.buttonPPR);
         buttonFairs = (Button) findViewById(R.id.buttonFairs);
-/*
 
-        randomButton.setOnClickListener(new View.OnClickListener() {
-
-
-            public void onClick(View view) {
-                //click button code here
-                //go to next page...
-                //sendMessage();
-                //background.setBackgroundColor(Color.parseColor("#00ff00"));
-
-                }
-
-        });
-
-        buttonSports.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //click button code here
-                //go to next page...
-                background.setBackgroundColor(Color.parseColor("#0000ff"));
-            }
-
-        });
-
-        buttonFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //click button code here
-                //go to next page...
-                background.setBackgroundColor(Color.parseColor("#ff0000"));
-            }
-
-        });
-
-        buttonYelp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //click button code here
-                //go to next page...
-            }
-
-        });
-
-        buttonOutdoors.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //click button code here
-                //go to next page...
-            }
-
-        });
-
-        buttonMarkets.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //click button code here
-                //go to next page...
-            }
-
-        });
-
-        buttonPPR.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //click button code here
-                //go to next page...
-            }
-
-        });
-
-        buttonFairs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //click button code here
-                //go to next page...
-            }
-
-        });
-
-*/
 
 
 
@@ -151,6 +69,53 @@ public class MainActivity extends AppCompatActivity {
         sportsButton.putExtra(EXTRA_MESSAGE, message);
         startActivity(sportsButton);
     }
+
+    //when the fairs button is clicked user will be taken to a new screen specific to the fairs button
+    public void fairsMessage(View view){
+        Intent fairsButton = new Intent(this, FairsButtonActivity.class);
+        fairsButton.putExtra(EXTRA_MESSAGE, message);
+        startActivity(fairsButton);
+    }
+
+    //yelp button clicked to new screen
+    public void yelpMessage(View view){
+        Intent yelpButton = new Intent(this, YelpButtonActivity.class);
+        yelpButton.putExtra(EXTRA_MESSAGE, message);
+        startActivity(yelpButton);
+    }
+
+    //outdoors button clicked to new screen
+    public void outdoorsMessage(View view){
+        Intent outdoorsButton = new Intent(this, OutdoorsButtonActivity.class);
+        outdoorsButton.putExtra(EXTRA_MESSAGE, message);
+        startActivity(outdoorsButton);
+    }
+
+    //facebook button clicked to new screen
+    public void facebookMessage(View view){
+        Intent facebookButton = new Intent(this, FacebookButtonActivity.class);
+        facebookButton.putExtra(EXTRA_MESSAGE, message);
+        startActivity(facebookButton);
+    }
+
+    //markets button to new page
+    public void marketsMessage(View view){
+        Intent marketsButton = new Intent(this, MarketsButtonActivity.class);
+        marketsButton.putExtra(EXTRA_MESSAGE, message);
+        startActivity(marketsButton);
+    }
+
+    //ppr button to new Screen
+    public void pprMessage(View view){
+        Intent pprButton = new Intent(this, PPRButtonActivity.class);
+        pprButton.putExtra(EXTRA_MESSAGE, message);
+        startActivity(pprButton);
+    }
+
+
+
+
+
 
 
 
