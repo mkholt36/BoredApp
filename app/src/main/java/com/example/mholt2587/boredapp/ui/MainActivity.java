@@ -27,22 +27,6 @@ public class MainActivity extends AppCompatActivity {
         buttonMarkets = (Button) findViewById(R.id.buttonMarkets);
         buttonPPR = (Button) findViewById(R.id.buttonPPR);
         buttonFairs = (Button) findViewById(R.id.buttonFairs);
-
- /*       String apiKey = "OkHCf4HExwOWu_BTa2P3QLyOEOeWMj040H2u7Fgi-d7m-CYyPyEoaet-QKfRgFJy_Ai31KNdKu_ke25XEy6dzAb6fu-A9cNn8RwftomjYE-xbgy9XoSk_BVmXiTEWXYx";
-
-        String yelpUrl = "https://api.yelp.com/v3/businesses/search";
-
-        OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder().url(yelpUrl).build();
-        Call call = client.newCall(request);
-        try {
-            Response response = call.execute();
-            if (response.isSuccessful()) {
-                Log.v(TAG, response.body().string());
-            }
-        } catch (IOException e) {
-            Log.e(TAG, "Exception caught: ", e);
-        }*/
     }
 
     //when the RANDOM button is clicked, the user will be taken to a new screen specific to the random button
