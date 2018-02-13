@@ -1,23 +1,28 @@
 package com.example.mholt2587.boredapp.ui;
+
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import com.example.mholt2587.boredapp.R;
-import static android.R.id.message;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.mholt2587.boredapp.R;
+
+import static android.R.id.message;
+
 public class MainActivity extends AppCompatActivity {
+    public static final String TAG = MainActivity.class.getSimpleName();
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     ConstraintLayout background;
     Button randomButton, buttonSports, buttonYelp, buttonFacebook, buttonOutdoors, buttonMarkets, buttonPPR, buttonFairs;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         background = (ConstraintLayout) findViewById(R.id.background);
         randomButton = (Button) findViewById(R.id.randomButton);
@@ -28,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         buttonMarkets = (Button) findViewById(R.id.buttonMarkets);
         buttonPPR = (Button) findViewById(R.id.buttonPPR);
         buttonFairs = (Button) findViewById(R.id.buttonFairs);
+
+
+
+
     }
 
     //when the RANDOM button is clicked, the user will be taken to a new screen specific to the random button
@@ -85,13 +94,6 @@ public class MainActivity extends AppCompatActivity {
         pprButton.putExtra(EXTRA_MESSAGE, message);
         startActivity(pprButton);
     }
-
-
-
-
-
-
-
 
 
 }
