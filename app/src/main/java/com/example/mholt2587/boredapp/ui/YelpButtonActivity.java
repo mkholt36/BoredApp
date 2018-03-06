@@ -1,4 +1,5 @@
 package com.example.mholt2587.boredapp.ui;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -22,17 +23,31 @@ import java.util.ArrayList;
 public class YelpButtonActivity extends AppCompatActivity{
     public static final String TAG = YelpButtonActivity.class.getSimpleName();
     private ListView mListView;
+    GPSTracker gps;
+    Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yelp);
 
+        mContext = this;
+
         mListView = (ListView) findViewById(R.id.list_view);
 
         String term = "restuarant";
         double latitude = 40.015;
         double longitude = -105.271;
+
+        gps = new GPSTracker(mContext, YelpButtonActivity.this);
+        if (gps.canGetLocation()){
+            latitude = gps.getLatitude();
+            longitude = gps.getLongitude();
+        }
+        else {
+            gps.showSettingsAlert();
+        }
+
         final String yelpUrl = "https://api.yelp.com/v3/businesses/search?term=" + term + "&latitude=" + latitude +  "&longitude=" + longitude;
 
         OkHttpClient client = new OkHttpClient();
