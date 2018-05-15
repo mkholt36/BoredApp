@@ -3,21 +3,23 @@ package com.example.mholt2587.boredapp.ui;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import com.example.mholt2587.boredapp.R;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -28,16 +30,30 @@ public class SportsButtonActivity extends AppCompatActivity {
 
     private ListView mlistView;
 
+    Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sports);mlistView = (ListView) findViewById(R.id.list_view);
+
+        GPSTracker gps;
+        mContext = this;
 
         String clientID = "OTY3NjUxOHwxNTEwOTU0MjA2LjE0";
 
         //location issue
         double lat = 45.5007;
         double lon = -122.57;
+
+        gps = new GPSTracker(mContext, SportsButtonActivity.this);
+        if (gps.canGetLocation()){
+            lat = gps.getLatitude();
+            lon = gps.getLongitude();
+        }
+        else {
+            gps.showSettingsAlert();
+        }
 
 
         final String seatGeekUrl = "https://api.seatgeek.com/2/events?client_id=" + clientID + "&geoip=true&lat=" + lat + "&lon=" + lon;
