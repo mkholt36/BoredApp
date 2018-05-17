@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example..mholt2587.boredapp.ui.SportsButtonActivity">
+    tools:context="com.example.mholt2587.boredapp.ui.SportsButtonActivity">
 
     <ListView
         android:id="@+id/list_view"
