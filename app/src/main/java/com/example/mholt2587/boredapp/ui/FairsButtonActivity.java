@@ -25,16 +25,33 @@ public class FairsButtonActivity extends AppCompatActivity {
 
     private ListView mlistView;
 
+    Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fairs);
 
+        GPSTracker gps;
+
+        mContext = this;
+
         mlistView = (ListView) findViewById(R.id.list_view);
 
         String apiKey = "5xJSw2RDDwRYkLIca72pBX3fOlSXGZEjFCLrtSak";
+        double latitude = 40.015;
+        double longitude = -105.271;
 
-        final String nationalParksUrl = "https://developer.nps.gov/api/v1/events?&api_key=" + apiKey;
+        gps = new GPSTracker(mContext, FairsButtonActivity.this);
+        if (gps.canGetLocation()){
+            latitude = gps.getLatitude();
+            longitude = gps.getLongitude();
+        }
+        else {
+            gps.showSettingsAlert();
+        }
+
+        final String nationalParksUrl = "https://developer.nps.gov/api/v1/parks?latLong:%20%22lat:" + latitude + ",%20long:" + longitude + "&api_key=" + apiKey;
 
 
         if (isNetworkAvailable()) {
@@ -95,42 +112,34 @@ public class FairsButtonActivity extends AppCompatActivity {
         JSONArray dataJSON = parksData.getJSONArray("data");
         CurrentData[] currentdatas = new CurrentData[dataJSON.length()];
 
-        String[] titleArray = new String[dataJSON.length()];
 
         for (int i = 0; i < dataJSON.length(); i++) {
             JSONObject currentdataJSON = dataJSON.getJSONObject(i);
 
-            //get title
-            String title = currentdataJSON.getString("title");
 
-            //get location
-            String location = currentdataJSON.getString("location");
+            String fullName = currentdataJSON.getString("fullName");
 
-            //get frequency, startDate, and endDate (from a JSONObject)
-            String frequency = currentdataJSON.getJSONObject("recurrence").getString("frequency");
-            String startDate = currentdataJSON.getJSONObject("recurrence").getString("startDate");
-            String endDate = currentdataJSON.getJSONObject("recurrence").getString("endDate");
 
-            //get time
-            String time = currentdataJSON.getString("time");
+            String location = currentdataJSON.getString("latLong");
+
+
+            String url = currentdataJSON.getString("url");
+
 
             String image = "https://www.nationalparks.org/sites/default/files/styles/large_list_image_2x/public/shutterstock_142351951.jpg?itok=Jr0mv7SL&timestamp=1474998760";
 
-            CurrentData currentdata = new CurrentData(title, location, frequency, startDate, endDate, time, image);
+            CurrentData currentdata = new CurrentData(fullName, location, url, image);
             currentdatas[i] = currentdata;
-            titleArray[i] = currentdatas[i].getTitle();
+
         }
 
         DataAdapter adapter = new DataAdapter(this, currentdatas);
         mlistView.setAdapter(adapter);
 
         for (int i = 0; i < dataJSON.length(); i++){
-            Log.d(TAG, currentdatas[i].getTitle());
+            Log.d(TAG, currentdatas[i].getFullName());
             Log.d(TAG, currentdatas[i].getLocation());
-            Log.d(TAG, currentdatas[i].getFrequency());
-            Log.d(TAG, currentdatas[i].getStartDate());
-            Log.d(TAG, currentdatas[i].getEndDate());
-            Log.d(TAG, currentdatas[i].getTime());
+            Log.d(TAG, currentdatas[i].getUrl());
             Log.d(TAG, currentdatas[i].getImage());
             Log.d(TAG, "here!!");
         }

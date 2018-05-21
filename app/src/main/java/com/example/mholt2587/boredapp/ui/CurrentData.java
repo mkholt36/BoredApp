@@ -2,44 +2,38 @@ package com.example.mholt2587.boredapp.ui;
 
 public class CurrentData {
 
-    private String title;
+
+    private String fullName;
     private String location;
-    private String frequency;
-    private String startDate;
-    private String endDate;
-    private String time;
+    private String url;
     private String image;
 
-    public CurrentData(String title, String location, String frequency, String endDate, String startDate, String time, String image){
-        this.title = title;
+    public CurrentData(String fullName, String location, String url, String image){
+
+
+        this.fullName = fullName;
         this.location = location;
-        this.frequency = frequency;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.time = time;
+        this.url = url;
         this.image = image;
 
     }
 
-    public String getTitle() {
-        return title;
-    }
 
-    public String getImage() {return image;}
+
+    public String getFullName(){
+        return fullName;
+    }
 
     public String getLocation() {
         return location;
     }
 
-    public String getFrequency() { return frequency;}
-
-    public String getStartDate() {return startDate;}
-
-    public String getEndDate() {return endDate;}
-
-    public String getTime() {
-        return time;
+    public String getUrl(){
+        return url;
     }
 
+    public String getImage(){
+        return image;
+    }
 
 }

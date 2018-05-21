@@ -55,21 +55,11 @@ public class DataAdapter extends BaseAdapter {
         TextView subtitleTextView =
                 (TextView) rowView.findViewById(R.id.data_list_subtitle);
 
-        // Get subtitle2 element
-       /* TextView subtitle2TextView =
-                (TextView) rowView.findViewById(R.id.data_list_subtitle2);*/
 
         // Get detail element
         TextView detailTextView =
                 (TextView) rowView.findViewById(R.id.data_list_detail);
 
-        //Get Start Date
-        TextView startDateTextView =
-                (TextView) rowView.findViewById(R.id.data_list_start);
-
-        //Get End Date
-        TextView endDateTextView =
-                (TextView) rowView.findViewById(R.id.data_list_end);
 
         // Get thumbnail element
         ImageView thumbnailImageView =
@@ -79,12 +69,10 @@ public class DataAdapter extends BaseAdapter {
         CurrentData currentdata = (CurrentData) getItem(position);
 
         // 2
-        titleTextView.setText(currentdata.getTitle());
-        subtitleTextView.setText(currentdata.getLocation());
-        // subtitle2TextView.setText((CharSequence) currentdata.getRecurrence());
-        detailTextView.setText(currentdata.getTime());
-        startDateTextView.setText(currentdata.getStartDate());
-        endDateTextView.setText(currentdata.getEndDate());
+        titleTextView.setText(currentdata.getFullName());
+        subtitleTextView.setText(currentdata.getUrl());
+        detailTextView.setText(currentdata.getLocation());
+
 
 
         // 3 IMAGES

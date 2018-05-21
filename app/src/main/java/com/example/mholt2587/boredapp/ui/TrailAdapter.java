@@ -96,7 +96,6 @@ public class TrailAdapter extends BaseAdapter {
         }
 
 
-
         return rowView;
     }
 }
