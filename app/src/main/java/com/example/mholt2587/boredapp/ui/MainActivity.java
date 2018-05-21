@@ -25,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         background = (ConstraintLayout) findViewById(R.id.background);
-        randomButton = (Button) findViewById(R.id.randomButton);
+        //randomButton = (Button) findViewById(R.id.randomButton);
         buttonSports = (Button) findViewById(R.id.buttonSports);
-        buttonFacebook = (Button) findViewById(R.id.buttonFacebook);
+        //buttonFacebook = (Button) findViewById(R.id.buttonFacebook);
         buttonYelp = (Button) findViewById(R.id.buttonYelp);
         buttonOutdoors = (Button) findViewById(R.id.buttonOutdoors);
         buttonMarkets = (Button) findViewById(R.id.buttonMarkets);
-        buttonPPR = (Button) findViewById(R.id.buttonPPR);
+       //buttonPPR = (Button) findViewById(R.id.buttonPPR);
         buttonFairs = (Button) findViewById(R.id.buttonFairs);
 
 
