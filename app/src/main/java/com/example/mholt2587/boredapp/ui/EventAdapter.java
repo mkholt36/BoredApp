@@ -79,12 +79,45 @@ public class EventAdapter extends BaseAdapter {
 
 
         // 3
-        Log.d("Test -- dm",currentevent.getImage());
-        String url = currentevent.getImage();
-        //String url = "https://chairnerd.global.ssl.fastly.net/images/performers-landscape/new-york-knicks-17293d/2090/huge.jpg, https://chairnerd.global.ssl.fastly.net/images/performers-landscape/portland-trail-blazers-7fe3cc/2106/huge.jpg";
+        Log.d("Test!",currentevent.getImage());
         //Picasso.with(mContext).load("https://chairnerd.global.ssl.fastly.net/images/performers-landscape/boris-b7d3a8/10411/huge.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
-        Picasso.with(mContext).load(url).fit().centerCrop().placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).into(thumbnailImageView);
-        //Picasso.with(mContext).load(String.valueOf(currentevent.getPerformers())).placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+
+        String eventPicture = String.valueOf(currentevent.getType());
+
+        if(eventPicture.equals("concert")){
+            Picasso.with(mContext).load("https://odysseyonline-img.rbl.ms/simage/https%3A%2F%2Fassets.rbl.ms%2F10580057%2F980x.jpg/2000%2C2000/zFZFeZ%2FxEbfpy14n/img.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        }
+        else if(eventPicture.equals("classical_orchestral_instrumental")){
+            Picasso.with(mContext).load("https://www.seattlesymphony.org/~/media/images/landing%20page%20banner%20880x385/1415_abouttheseattlesymphony_banner.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        }
+        else if(eventPicture.equals("family")){
+            Picasso.with(mContext).load("http://grandmother.info/wp-content/uploads/how-does-your-city-rate-on-the-family-friendly-index-family-friendly.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        }
+        else if(eventPicture.equals("theater")){
+            Picasso.with(mContext).load("https://www.michaans.com/img/highlights/page/theaterscan_01.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        }
+        else if(eventPicture.equals("band")){
+            Picasso.with(mContext).load("https://www.shoemakerjukebox.com/sites/www.shoemakerjukebox.com/files/hire-Live-Band.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        }
+        else{
+            Picasso.with(mContext).load("http://images.bwog.com/wp-content/uploads/2015/09/shutterstock_92569492.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        }
+
+        /*if(activityPicture.equals("[hiking]")){
+            Picasso.with(mContext).load(R.mipmap.hiking).into(thumbnailImageView);
+        }
+        else if(activityPicture.equals("[mountain biking]")){
+            Picasso.with(mContext).load(R.mipmap.mountain_biking).into(thumbnailImageView);
+        }
+        else if(activityPicture.equals("[snow sports]")){
+            Picasso.with(mContext).load(R.mipmap.snow_sports).into(thumbnailImageView);
+        }
+        else if(activityPicture.equals("[mountain biking, hiking]")){
+            Picasso.with(mContext).load(R.mipmap.hiking).into(thumbnailImageView);
+        }
+        else {
+            Picasso.with(mContext).load(R.mipmap.multiple_activities).into(thumbnailImageView);
+        }*/
 
         return rowView;
     }

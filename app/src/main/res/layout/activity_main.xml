@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:elevation="22dp"
         android:onClick="marketsMessage"
-        android:text="YelpTDB"
+        android:text="POOLS"
         android:textColor="@android:color/holo_purple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.226"

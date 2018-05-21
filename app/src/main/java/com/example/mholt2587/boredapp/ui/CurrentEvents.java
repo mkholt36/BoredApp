@@ -41,4 +41,5 @@ public class CurrentEvents {
     public String getType() {
         return type;
     }
+
 }

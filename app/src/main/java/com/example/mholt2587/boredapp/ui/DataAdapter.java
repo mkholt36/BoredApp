@@ -76,7 +76,7 @@ public class DataAdapter extends BaseAdapter {
 
 
         // 3 IMAGES
-        Log.d("Test", currentdata.getImage());
+        Log.d("Test!!", currentdata.getImage());
         Picasso.with(mContext).load("https://www.nationalparks.org/sites/default/files/styles/large_list_image_2x/public/shutterstock_142351951.jpg?itok=Jr0mv7SL&timestamp=1474998760").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
 
         return rowView;
