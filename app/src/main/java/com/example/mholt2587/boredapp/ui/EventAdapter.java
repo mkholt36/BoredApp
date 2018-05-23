@@ -99,6 +99,15 @@ public class EventAdapter extends BaseAdapter {
         else if(eventPicture.equals("band")){
             Picasso.with(mContext).load("https://www.shoemakerjukebox.com/sites/www.shoemakerjukebox.com/files/hire-Live-Band.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
         }
+        else if(eventPicture.equals("broadway_tickets_national")){
+            Picasso.with(mContext).load("https://theimpactnews.com/wp-content/uploads/2018/04/broadway-show.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        }
+        else if(eventPicture.equals("music_festival")){
+            Picasso.with(mContext).load("https://studybreaks.com/wp-content/uploads/2018/03/music-festivals.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        }
+        else if(eventPicture.equals("mlb")){
+            Picasso.with(mContext).load("http://images.performgroup.com/di/library/omnisport/69/57/world-series-game-7_gp6k13szyy311ccdiu87vcvkf.jpg?t=-1825695969&w=960&quality=70").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        }
         else{
             Picasso.with(mContext).load("http://images.bwog.com/wp-content/uploads/2015/09/shutterstock_92569492.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
         }
