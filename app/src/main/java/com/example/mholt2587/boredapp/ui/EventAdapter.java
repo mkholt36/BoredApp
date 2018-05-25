@@ -80,7 +80,6 @@ public class EventAdapter extends BaseAdapter {
 
         // 3
         Log.d("Test!",currentevent.getImage());
-        //Picasso.with(mContext).load("https://chairnerd.global.ssl.fastly.net/images/performers-landscape/boris-b7d3a8/10411/huge.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
 
         String eventPicture = String.valueOf(currentevent.getType());
 
@@ -114,26 +113,15 @@ public class EventAdapter extends BaseAdapter {
         else if(eventPicture.equals("minor_league_baseball")){
             Picasso.with(mContext).load("https://storage.googleapis.com/afs-prod/media/media:b3d5e6526b004054930a58567e12d7f2/800.jpeg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
         }
+        else if(eventPicture.equals("soccer")){
+            Picasso.with(mContext).load("https://nevadapreps.com/wp-content/uploads/2017/08/9141785_web1_thinkstockphotos-497466485.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        }
+        else if(eventPicture.equals("dance_performance_tour")){
+            Picasso.with(mContext).load("https://upload.wikimedia.org/wikipedia/commons/8/8b/Bend_and_Snap%2C_contemporary_dance_performance_at_Nazareth_College_Arts_Center%2C_Rochester%2C_New_York_-_20090925.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        }
         else{
             Picasso.with(mContext).load("https://springintocorrimal.com.au/wp-content/uploads/2016/09/entertainment2.png").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
         }
-
-
-        /*if(activityPicture.equals("[hiking]")){
-            Picasso.with(mContext).load(R.mipmap.hiking).into(thumbnailImageView);
-        }
-        else if(activityPicture.equals("[mountain biking]")){
-            Picasso.with(mContext).load(R.mipmap.mountain_biking).into(thumbnailImageView);
-        }
-        else if(activityPicture.equals("[snow sports]")){
-            Picasso.with(mContext).load(R.mipmap.snow_sports).into(thumbnailImageView);
-        }
-        else if(activityPicture.equals("[mountain biking, hiking]")){
-            Picasso.with(mContext).load(R.mipmap.hiking).into(thumbnailImageView);
-        }
-        else {
-            Picasso.with(mContext).load(R.mipmap.multiple_activities).into(thumbnailImageView);
-        }*/
 
         return rowView;
     }
