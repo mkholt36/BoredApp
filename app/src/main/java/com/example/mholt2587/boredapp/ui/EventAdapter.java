@@ -108,9 +108,16 @@ public class EventAdapter extends BaseAdapter {
         else if(eventPicture.equals("mlb")){
             Picasso.with(mContext).load("http://images.performgroup.com/di/library/omnisport/69/57/world-series-game-7_gp6k13szyy311ccdiu87vcvkf.jpg?t=-1825695969&w=960&quality=70").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
         }
-        else{
-            Picasso.with(mContext).load("http://images.bwog.com/wp-content/uploads/2015/09/shutterstock_92569492.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        else if(eventPicture.equals("comedy")){
+            Picasso.with(mContext).load("https://stscsport.co.uk/courtside/wp-content/uploads/2018/04/sutton-comedy.jpg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
         }
+        else if(eventPicture.equals("minor_league_baseball")){
+            Picasso.with(mContext).load("https://storage.googleapis.com/afs-prod/media/media:b3d5e6526b004054930a58567e12d7f2/800.jpeg").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        }
+        else{
+            Picasso.with(mContext).load("https://springintocorrimal.com.au/wp-content/uploads/2016/09/entertainment2.png").placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
+        }
+
 
         /*if(activityPicture.equals("[hiking]")){
             Picasso.with(mContext).load(R.mipmap.hiking).into(thumbnailImageView);
